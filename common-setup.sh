@@ -43,7 +43,7 @@ if ! type -P git >/dev/null ; then
   exit 1
 fi
 
-for x in nixpkgs reflex reflex-dom ; do
+for x in nixpkgs reflex reflex-dom ghcjs-websockets squares entropy ; do
   if [ ! "$(ls -A "$x")" ] ; then
 
     git submodule update --init --recursive "$x"

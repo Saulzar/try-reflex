@@ -17,13 +17,13 @@ with haskellPackages;
   reflex
   reflex-dom
   ghcjs-websockets
-  # squares-client
+#  squares-client
 
 
 ] else []) ++ (if platform == "ghc" then [
   ##############################################################################
   # Add ghc-only packages here                                                 #
   ##############################################################################
-  # squares-server
+  squares-server
 
 ] else [])

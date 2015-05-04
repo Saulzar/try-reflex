@@ -7,41 +7,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 echo "Entering the reflex sandbox..."
 
-# TODO: Use a better check that actually checks for each platform's availability
-if [ ! "$(nix-instantiate --eval -E '(import <nixpkgs> {}).stdenv.isDarwin')" = "true" ] ; then
-SUGGESTION_GHC=$(cat <<EOF
-To run a simple GUI as a native binary:
-$ ghc -e 'import Reflex.Dom' -e 'mainWidget $ text \"Hello, world!\"'
+google-chrome file:///$(nix-build $NIXOPTS --no-out-link "$DIR" -A ghcjs.squares-client)/bin/squares-single.jsexe/index.html
 
-Or to see a more complex native binary GUI example (based on the source at $(pwd)/reflex-todomvc/src/Main.hs):
-$ reflex-todomvc
-EOF
-)
-else
-SUGGESTION_GHC=""
-fi
-
-SUGGESTION_GHCJS=$(cat <<EOF2
-To create a simple web GUI:
-$ cat >hello.hs <<EOF
-import Reflex.Dom
-main = mainWidget $ text \"Hello, world!\"
-EOF
-$ ghcjs hello.hs
-Then navigate your browser to file://$(pwd)/hello.jsexe/index.html
-
-Or to see a more complex GUI example (based on the source at $(pwd)/reflex-todomvc/src/Main.hs), navigate your browser to file://$(nix-build $NIXOPTS --no-out-link "$DIR" -A ghcjs.reflex-todomvc)/bin/reflex-todomvc.jsexe/index.html
-EOF2
-)
-
-INFO=$(cat <<EOF
-
-You are now in a shell with access to the Reflex functional reactive programming engine.
-
-$SUGGESTION_GHC
-
-$SUGGESTION_GHCJS
-EOF
-)
 
 nix-shell "$DIR/shell.nix" $NIXOPTS --command "echo \"$INFO\" ; return" "$@"
