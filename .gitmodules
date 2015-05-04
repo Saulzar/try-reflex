@@ -10,3 +10,12 @@
 [submodule "reflex-todomvc"]
 	path = reflex-todomvc
 	url = ../reflex-todomvc
+[submodule "ghcjs-websockets"]
+	path = ghcjs-websockets
+	url = git@github.com:Saulzar/ghcjs-websockets.git
+[submodule "entropy"]
+	path = entropy
+	url = git@github.com:Saulzar/entropy.git
+[submodule "squares"]
+	path = squares
+	url = https://github.com/Saulzar/squares
