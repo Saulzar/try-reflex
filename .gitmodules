@@ -16,6 +16,3 @@
 [submodule "entropy"]
 	path = entropy
 	url = git@github.com:Saulzar/entropy.git
-[submodule "squares"]
-	path = squares
-	url = https://github.com/Saulzar/squares
