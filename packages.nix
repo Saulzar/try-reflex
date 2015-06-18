@@ -12,8 +12,7 @@ with haskellPackages;
   
   lens
   containers
-#  squares-lib
-  
+  squares
 
 ] ++ (if platform == "ghcjs" then [
   ##############################################################################
@@ -23,7 +22,8 @@ with haskellPackages;
   ghcjs-websockets
   ghcjs-websockets-reflex
   
-#  squares-client
+  
+  
   
 
 ] else []) ++ (if platform == "ghc" then [
@@ -31,6 +31,5 @@ with haskellPackages;
   # Add ghc-only packages here                                                 #
   ##############################################################################
   
-#  squares-server
 
 ] else [])

@@ -13,12 +13,15 @@ let overrideCabal = drv: f: (drv.override (args: args // {
         reflex-dom = self.callPackage ./reflex-dom {};
         reflex-todomvc = self.callPackage ./reflex-todomvc {};
 
-        ghcjs-websockets = nixpkgs.fetchgit { 
-            url = https://github.com/Saulzar/ghcjs-websockets.git;
-            rev = "856e7a5f63faf86d5c41f1958abc6d3cdc9453b5";
-            sha256 = "1hzcxgws130aa16074wjc71kb94ha8817xlxkqmg7ibs554dalvf";
-          };
+        entropy = overrideCabal super.entropy (drv: {src = ./entropy; });  
+        ghcjs-websockets = self.callPackage ./ghcjs-websockets {};
         
+        ghcjs-websockets-reflex = self.callPackage ./ghcjs-websockets-reflex {};
+
+        squares = self.callPackage ./squares/lib {};
+        squares-client = self.callPackage ./squares/client {};
+        squares-server = self.callPackage ./squares/server {};
+
         
         active = overrideCabal super.active (drv: {
           version = "0.1.0.19";

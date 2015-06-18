@@ -17,3 +17,9 @@
 [submodule "squares"]
 	path = squares
 	url = git@github.com:Saulzar/squares.git
+[submodule "ghcjs-websockets"]
+	path = ghcjs-websockets
+	url = https://github.com/Saulzar/ghcjs-websockets
+[submodule "entropy"]
+	path = entropy
+	url = https://github.com/Saulzar/entropy
