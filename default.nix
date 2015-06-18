@@ -12,6 +12,14 @@ let overrideCabal = drv: f: (drv.override (args: args // {
         reflex = self.callPackage ./reflex {};
         reflex-dom = self.callPackage ./reflex-dom {};
         reflex-todomvc = self.callPackage ./reflex-todomvc {};
+
+        ghcjs-websockets = nixpkgs.fetchgit { 
+            url = https://github.com/Saulzar/ghcjs-websockets.git;
+            rev = "856e7a5f63faf86d5c41f1958abc6d3cdc9453b5";
+            sha256 = "1hzcxgws130aa16074wjc71kb94ha8817xlxkqmg7ibs554dalvf";
+          };
+        
+        
         active = overrideCabal super.active (drv: {
           version = "0.1.0.19";
           sha256 = "1zzzrjpfwxzf0zbz8vcnpfqi7djvrfxglhkvw1s6yj5gcblg2rcw";

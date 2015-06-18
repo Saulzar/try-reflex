@@ -1,9 +1,19 @@
 [submodule "reflex"]
 	path = reflex
-	url = ../reflex
+	url = https://github.com/ryantrinkle/reflex.git
+	branch = develop
 [submodule "reflex-dom"]
 	path = reflex-dom
-	url = ../reflex-dom
+  url = ../reflex-dom
+	branch = develop
 [submodule "reflex-todomvc"]
 	path = reflex-todomvc
-	url = ../reflex-todomvc
+	url = https://github.com/ryantrinkle/reflex-todomvc.git
+	branch = develop
+ 
+[submodule "ghcjs-websockets-reflex"]
+	path = ghcjs-websockets-reflex
+	url = git@github.com:Saulzar/ghcjs-websockets-reflex.git
+[submodule "squares"]
+	path = squares
+	url = git@github.com:Saulzar/squares.git
