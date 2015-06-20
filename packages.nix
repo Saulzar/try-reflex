@@ -12,7 +12,7 @@ with haskellPackages;
   
   lens
   containers
-  squares
+  # squares
 
 ] ++ (if platform == "ghcjs" then [
   ##############################################################################
@@ -21,8 +21,6 @@ with haskellPackages;
   
   ghcjs-websockets
   ghcjs-websockets-reflex
-  
-  
   
   
 

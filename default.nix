@@ -22,6 +22,9 @@ let overrideCabal = drv: f: (drv.override (args: args // {
         squares-client = self.callPackage ./squares/client {};
         squares-server = self.callPackage ./squares/server {};
 
+       # linear = overrideCabal super.linear (drv: {src = ./linear; }); 
+       # transformers = overrideCabal super.transformers (drv: { rc = ./transformers; });
+
         
         active = overrideCabal super.active (drv: {
           version = "0.1.0.19";

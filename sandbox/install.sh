@@ -1,0 +1,1 @@
+cabal install ../reflex ../reflex-dom ../ghcjs-websockets ../ghcjs-websockets-reflex --ghcjs
